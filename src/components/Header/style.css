@@ -1,0 +1,22 @@
+.menu-bg {
+  width: 100%;
+  background: #2d333b;
+  height: 64px;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+}
+.title {
+  width: calc(100% - 36px);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  left: -18px;
+}
+
+.container {
+  align-items: center;
+  height: 100%;
+}
