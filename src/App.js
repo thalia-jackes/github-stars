@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import Search from './components/Search';
 import Results from './components/Results';
+import Bio from './components/Bio';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
     <div className="App">
       <Header/>
       <Search funcaoBuscar={getStared}/>
+      <Bio/>
       <Results resultados={resultados} />
       {/* <button onClick={() => getStared()}>clica</button> */}
     </div>
