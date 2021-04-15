@@ -2,7 +2,6 @@ import React from 'react';
 import './style.css';
 
 function Search(props) {
-  console.log(props)
   const funcaoBuscar = props.funcaoBuscar
   return (
     <div className="search-container">
@@ -12,10 +11,10 @@ function Search(props) {
           Buscar usuário
         </h1>
         <div className="searchField">
-          <button class="submitBtn" onClick={() => funcaoBuscar(document.getElementById('searchField').value)}>
+          <button className="submitBtn" onClick={() => funcaoBuscar(document.getElementById('searchField').value)}>
             <img src="/img/lupa.svg" />
           </button>
-          <input id="searchField" value="thalia-jackes" type="text" placeholder="Usuário do github..." />
+          <input id="searchField" defaultValue="thalia-jackes" type="text" placeholder="Usuário do github..." />
         </div>
       </div>
     </div>

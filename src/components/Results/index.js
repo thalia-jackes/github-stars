@@ -2,7 +2,6 @@ import React from 'react';
 import './style.css';
 
 function Results(props) {
-  console.log('props', props)
   const resultados = props.resultados;
   if(!resultados) return null
 
