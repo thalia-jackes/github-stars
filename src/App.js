@@ -13,20 +13,24 @@ function App() {
   var getStared = async (user) => {
     const results = await fetch(`https://api.github.com/users/${user}/starred`)
       .then((res) => res.json())
-      .then((starred) => starred.map((s) => ({
+      .then((starred) => {
+        if (!starred || starred.message) {
+          return null;
+        }
+        return starred.map((s) => ({
           owner:       s.owner,
           repo:        s.name,
           description: s.description,
           url: s.url, 
           avatar:s.owner.avatar_url,
           login:s.owner.login
-      })));
+        }));
+      });
       mudarResultados(results)
 
       const resultsInfo = await fetch(`https://api.github.com/users/${user}`)
       .then((res) => res.json())
       
-     
       mudarUserInfo(resultsInfo)
 
   }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.css'
 
 function Bio (props) {
@@ -7,12 +7,22 @@ function Bio (props) {
     return (null)
   }
 
+  if (userInfo.message) {
+    return (
+      <div className="container">
+        <div className="bloco-erro">
+        <img alt="not-found" className="not-found" src="/img/not-found.svg"/>
+          Usuário não encontrado :/
+        </div>  
+      </div>  
+    )
+  }
 
   return( 
   <div className="bloco-bio">
     <div className="container">
       <div className="card">
-        <img className="avatar" src={userInfo.avatar_url}/>
+        <img alt="avatar" className="avatar" src={userInfo.avatar_url}/>
         <h2>{userInfo.login}</h2>
         {userInfo.bio && <div className="info-bio">
           <h3>Bio</h3>
@@ -23,15 +33,15 @@ function Bio (props) {
           <h3>Informações Gerais</h3>
         
           {userInfo.email && <div className="email linha">
-            <img src="/img/email.svg"/>
+            <img alt="email" src="/img/email.svg"/>
             <p>{userInfo.email}</p>
           </div>}
           <div className="logo-info linha">
-            <img src="/img/logo-info.svg"/>
+            <img alt="logo" src="/img/logo-info.svg"/>
             <p>{userInfo.html_url}</p>
           </div>
           {userInfo.location && <div className="localizacao linha"> 
-            <img src="/img/localizacao.svg"/>
+            <img alt="localizacao" src="/img/localizacao.svg"/>
             <p>{userInfo.location}</p>
           </div>}
         </div>

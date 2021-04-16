@@ -6,13 +6,13 @@ function Search(props) {
   return (
     <div className="search-container">
       <div className="container">
-        <img className="image-bg" src="/img/content.svg"/>
+        <img alt="content" className="image-bg" src="/img/content.svg"/>
         <h1>
           Buscar usuário
         </h1>
         <div className="searchField">
           <button className="submitBtn" onClick={() => funcaoBuscar(document.getElementById('searchField').value)}>
-            <img src="/img/lupa.svg" />
+            <img alt="lupa" src="/img/lupa.svg" />
           </button>
           <input id="searchField" defaultValue="thalia-jackes" type="text" placeholder="Usuário do github..." />
         </div>
